@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:train/screens/login.dart';
+import 'package:train/core/constants.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -26,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF40BFFF),
-      body: Center(child: Image(image: AssetImage('image/logo.png'))),
+      body: Center(child: Image(image: AssetImage(Images.logo))),
     );
   }
 }

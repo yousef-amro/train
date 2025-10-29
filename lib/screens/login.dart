@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:train/core/constants.dart';
 import 'package:train/screens/register.dart';
+import 'package:train/core/constants.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -28,29 +30,25 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    "image/logo2.png",
-                    height: 72,
-                    width: 72,
-                  ),
-                  SizedBox(height: 15),
+                  Image.asset(Images.logo2, height: 72, width: 72),
+                  const SizedBox(height: 15),
                   Text(
                     'Welcome to Lafyuu',
                     style: TextStyle(
-                      color: Color(0xff223263),
+                      color: AppColors.cello,
                       fontWeight: FontWeight.w700,
                       fontSize: 22,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                     style: TextStyle(
                       fontSize: 16,
-                      color: Color(0xFF9098B1),
+                      color: AppColors.baliHai,
                     ),
                     'Sign in to continue',
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 12,
@@ -68,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           return "Enter Email";
                         }
                         bool emailValid = RegExp(
-                          r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9]+\.[a-zA-Z]+$",
+                          Validates.email,
                         ).hasMatch(value);
                         if (!emailValid) {
                           return "Enter Valid Email";
@@ -78,12 +76,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       decoration: InputDecoration(
                         hintText: 'Your Email',
                         hintStyle: TextStyle(
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
 
                         prefixIcon: Icon(
                           Icons.mail_outline,
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
 
                         filled: true,
@@ -95,29 +93,29 @@ class _LoginScreenState extends State<LoginScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius
                               .zero, // مستطيل تمامًا بدون زوايا دائرية
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             width: 2,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        enabledBorder: const OutlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
                             width: 2,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        focusedBorder: const OutlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
                             width: 2,
-                            color: Color(0xFF40BFFF),
+                            color: AppColors.dodgerBlue,
                           ), // لون عند الضغط
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   // ================================================
                   Padding(
                     padding: const EdgeInsets.only(
@@ -152,11 +150,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         prefixIcon: Icon(
                           Icons.lock_outline,
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
                         hintText: 'Password',
                         hintStyle: TextStyle(
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
                         filled: true,
                         fillColor: Colors.white,
@@ -167,29 +165,29 @@ class _LoginScreenState extends State<LoginScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius
                               .zero, // مستطيل تمامًا بدون زوايا دائرية
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             width: 2.5,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        enabledBorder: const OutlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
                             width: 2.5,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        focusedBorder: const OutlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
-                            color: Color(0xFF40BFFF),
+                            color: AppColors.dodgerBlue,
                             width: 2,
                           ), // لون عند الضغط
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 12,
@@ -206,7 +204,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                       child: RawMaterialButton(
-                        fillColor: Color(0xff40BFFF),
+                        fillColor: AppColors.dodgerBlue,
                         shape: RoundedRectangleBorder(
                           // الإطار الأسود
                           borderRadius: BorderRadius.circular(5),
@@ -220,7 +218,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         },
 
-                        child: SizedBox(
+                        child: const SizedBox(
                           width: double.infinity,
                           height: 60,
                           child: Center(
@@ -237,13 +235,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     children: [
-                      SizedBox(width: 15),
+                      const SizedBox(width: 15),
                       Expanded(
                         child: Container(
-                          color: Color(0xFFEBF0FF),
+                          color: AppColors.zircon,
                           height: 2,
                           width: double.infinity,
                         ),
@@ -256,7 +254,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Text(
                           'OR',
                           style: TextStyle(
-                            color: Color(0xff9098B1),
+                            color: AppColors.baliHai,
                             fontSize: 15,
                             fontWeight: FontWeight.w900,
                           ),
@@ -264,16 +262,16 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Expanded(
                         child: Container(
-                          color: Color(0xFFEBF0FF),
+                          color: AppColors.zircon,
                           height: 2,
                           width: double.infinity,
                         ),
                       ),
-                      SizedBox(width: 15),
+                      const SizedBox(width: 15),
                     ],
                   ),
 
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 12,
@@ -281,10 +279,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     child: RawMaterialButton(
                       fillColor: Colors.white,
-                      hoverColor: Color(0xFFEBF0FF),
+                      hoverColor: AppColors.zircon,
                       shape: RoundedRectangleBorder(
                         side: BorderSide(
-                          color: Color(0xFFEBF0FF),
+                          color: AppColors.zircon,
                           width: 1.5,
                         ), // الإطار الأسود
                         borderRadius: BorderRadius.circular(
@@ -301,14 +299,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
                           children: [
                             Image.asset(
-                              'image/Google.png',
+                              Images.googlelogo,
                               width: 50, // العرض
                               height: 50, // الطول
                             ),
                             Center(
                               child: Text(
                                 style: TextStyle(
-                                  color: Color(0xff9098B1),
+                                  color: AppColors.baliHai,
                                   fontSize: 17,
                                   fontWeight: FontWeight.w900,
                                 ),
@@ -320,7 +318,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 12,
@@ -328,10 +326,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     child: RawMaterialButton(
                       fillColor: Colors.white,
-                      hoverColor: Color(0xFFEBF0FF),
+                      hoverColor: AppColors.zircon,
                       shape: RoundedRectangleBorder(
                         side: BorderSide(
-                          color: Color(0xFFEBF0FF),
+                          color: AppColors.zircon,
                           width: 1.5,
                         ), // الإطار الأسود
                         borderRadius: BorderRadius.circular(
@@ -348,14 +346,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
                           children: [
                             Image.asset(
-                              'image/Facebook.png',
+                              Images.facebooklogo,
                               width: 50, // العرض
                               height: 50, // الطول
                             ),
                             Center(
                               child: Text(
                                 style: TextStyle(
-                                  color: Color(0xff9098B1),
+                                  color: AppColors.baliHai,
                                   fontSize: 17,
                                   fontWeight: FontWeight.w900,
                                 ),
@@ -368,7 +366,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
 
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   GestureDetector(
                     onTap: () {
                       setState(() {
@@ -378,22 +376,22 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Text(
                       'Forgot Password?',
                       style: TextStyle(
-                        color: Color(0xff40BFFF),
+                        color: AppColors.dodgerBlue,
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
 
                     children: [
                       Text(
                         'Don’t have a account?',
-                        style: TextStyle(color: Color(0xFF9098B1)),
+                        style: TextStyle(color: AppColors.baliHai),
                       ),
-                      SizedBox(width: 2.5),
+                      const SizedBox(width: 2.5),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -409,7 +407,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Text(
                           'Register',
                           style: TextStyle(
-                            color: Color(0xff40BFFF),
+                            color: AppColors.dodgerBlue,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

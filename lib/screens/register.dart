@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:train/core/constants.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -29,12 +30,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    "image/logo2.png",
-                    height: 72,
-                    width: 72,
-                  ),
-                  SizedBox(height: 15),
+                  Image.asset(Images.logo2, height: 72, width: 72),
+                  const SizedBox(height: 15),
                   Text(
                     'Let’s Get Started',
                     style: TextStyle(
@@ -43,15 +40,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       fontSize: 21,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                     style: TextStyle(
                       fontSize: 16,
-                      color: Color(0xFF9098B1),
+                      color: AppColors.baliHai,
                     ),
                     'Create an new account',
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 12,
@@ -66,7 +63,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           return "Enter Your Full Name";
                         }
                         bool nameValid = RegExp(
-                          r'^[a-zA-Z0-9._-\s]{3,20}$',
+                          Validates.name,
                         ).hasMatch(value);
                         if (!nameValid) {
                           return "Enter Valid username";
@@ -76,12 +73,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       decoration: InputDecoration(
                         hintText: 'Full Name',
                         hintStyle: TextStyle(
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
 
                         prefixIcon: Icon(
                           Icons.person_outline,
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
 
                         filled: true,
@@ -93,29 +90,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius
                               .zero, // مستطيل تمامًا بدون زوايا دائرية
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             width: 2,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        enabledBorder: const OutlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
                             width: 2,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        focusedBorder: const OutlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
                             width: 2,
-                            color: Color(0xFF40BFFF),
+                            color: AppColors.dodgerBlue,
                           ), // لون عند الضغط
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 12,
@@ -132,7 +129,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           return "Enter Email";
                         }
                         bool emailValid = RegExp(
-                          r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9]+\.[a-zA-Z]+$",
+                          Validates.email,
                         ).hasMatch(value);
                         if (!emailValid) {
                           return "Enter Valid Email";
@@ -142,12 +139,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       decoration: InputDecoration(
                         hintText: 'Your Email',
                         hintStyle: TextStyle(
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
 
                         prefixIcon: Icon(
                           Icons.mail_outline,
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
 
                         filled: true,
@@ -159,29 +156,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius
                               .zero, // مستطيل تمامًا بدون زوايا دائرية
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             width: 2,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        enabledBorder: const OutlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
                             width: 2,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        focusedBorder: const OutlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
                             width: 2,
-                            color: Color(0xFF40BFFF),
+                            color: AppColors.dodgerBlue,
                           ), // لون عند الضغط
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 12,
@@ -219,11 +216,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         prefixIcon: Icon(
                           Icons.lock_outline,
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
                         hintText: 'Password',
                         hintStyle: TextStyle(
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
                         filled: true,
                         fillColor: Colors.white,
@@ -234,29 +231,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius
                               .zero, // مستطيل تمامًا بدون زوايا دائرية
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             width: 2.5,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        enabledBorder: const OutlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
                             width: 2.5,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        focusedBorder: const OutlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
-                            color: Color(0xFF40BFFF),
+                            color: AppColors.dodgerBlue,
                             width: 2,
                           ), // لون عند الضغط
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 12,
@@ -293,11 +290,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         prefixIcon: Icon(
                           Icons.lock_outline,
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
                         hintText: 'Password',
                         hintStyle: TextStyle(
-                          color: Color(0xFF9098B1),
+                          color: AppColors.baliHai,
                         ),
                         filled: true,
                         fillColor: Colors.white,
@@ -308,29 +305,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius
                               .zero, // مستطيل تمامًا بدون زوايا دائرية
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             width: 2.5,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        enabledBorder: const OutlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
                             width: 2.5,
-                            color: Color(0xFFEBF0FF),
+                            color: AppColors.zircon,
                           ),
                         ),
-                        focusedBorder: const OutlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(
-                            color: Color(0xFF40BFFF),
+                            color: AppColors.dodgerBlue,
                             width: 2,
                           ), // لون عند الضغط
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   Padding(
                     padding: const EdgeInsets.only(
@@ -348,7 +345,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ],
                       ),
                       child: RawMaterialButton(
-                        fillColor: Color(0xff40BFFF),
+                        fillColor: AppColors.dodgerBlue,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5),
                         ),
@@ -362,7 +359,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             passController2.clear();
                           }
                         },
-                        child: SizedBox(
+                        child: const SizedBox(
                           width: double.infinity,
                           height: 60,
                           child: Center(
@@ -379,16 +376,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
 
                     children: [
                       Text(
                         'have a account?',
-                        style: TextStyle(color: Color(0xFF9098B1)),
+                        style: TextStyle(color: AppColors.baliHai),
                       ),
-                      SizedBox(width: 2.5),
+                      const SizedBox(width: 2.5),
                       GestureDetector(
                         onTap: () {
                           setState(() {
@@ -398,7 +395,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: Text(
                           'Sign In',
                           style: TextStyle(
-                            color: Color(0xff40BFFF),
+                            color: AppColors.dodgerBlue,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
