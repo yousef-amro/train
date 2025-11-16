@@ -1,0 +1,17 @@
+{
+  "welcome" : "مرحبا بك في لافيو",
+  "singInMessage" : "سجل دخولك للاستمرار",
+  "emailMessage" : "الايميل الخاص بك",
+  "passWordMessage" : "كلمة المرور",
+  "passWord2Message" : "اعد كتابة كلمة المرور",
+  "nameMessage" : "الاسم كامل",
+  "singInButton" : "تسجيل الدخول",
+  "or" : "او",
+  "googleLogin" : "تسجيل باستخدام جوجل",
+  "facebookLogin" : "تسجيل باستخدام فيسبوك",
+  "forgotPassword" : "نسيت كلمة المرور؟",
+  "donthaveacc" : "لا تمتلك حساب؟",
+  "Register" : "إنشاء حساب",
+  "singUpButton" : "تسجيل حساب",
+  "haveacc" : "لديك حساب؟"
+}

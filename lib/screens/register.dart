@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:train/core/constants.dart';
+import 'package:train/core/widgets.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -10,7 +12,7 @@ class RegisterScreen extends StatefulWidget {
 
 final _formfield = GlobalKey<FormState>();
 final nameController = TextEditingController();
-final emailController = TextEditingController();
+final regEmailController = TextEditingController();
 final passController1 = TextEditingController();
 final passController2 = TextEditingController();
 bool passToggel1 = true;
@@ -54,130 +56,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       left: 12,
                       right: 12,
                     ),
-                    child: TextFormField(
-                      controller:
-                          nameController, // ✅ هنا ضفنا الكنترولر
-
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return "Enter Your Full Name";
-                        }
-                        bool nameValid = RegExp(
-                          Validates.name,
-                        ).hasMatch(value);
-                        if (!nameValid) {
-                          return "Enter Valid username";
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        hintText: 'Full Name',
-                        hintStyle: TextStyle(
-                          color: AppColors.baliHai,
-                        ),
-
-                        prefixIcon: Icon(
-                          Icons.person_outline,
-                          color: AppColors.baliHai,
-                        ),
-
-                        filled: true,
-                        fillColor: Colors.white,
-                        contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 15,
-                          vertical: 20,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius
-                              .zero, // مستطيل تمامًا بدون زوايا دائرية
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: AppColors.zircon,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.zero,
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: AppColors.zircon,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.zero,
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: AppColors.dodgerBlue,
-                          ), // لون عند الضغط
-                        ),
-                      ),
-                    ),
+                    //_________________________________________
+                    child: TextFields.registerName,
+                    //_________________________________________
                   ),
                   const SizedBox(height: 10),
+                  //_________________________________________
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 12,
                       right: 12,
                     ),
-                    child: TextFormField(
-                      controller:
-                          emailController, // ✅ هنا ضفنا الكنترولر
-
-                      keyboardType: TextInputType.emailAddress,
-
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return "Enter Email";
-                        }
-                        bool emailValid = RegExp(
-                          Validates.email,
-                        ).hasMatch(value);
-                        if (!emailValid) {
-                          return "Enter Valid Email";
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        hintText: 'Your Email',
-                        hintStyle: TextStyle(
-                          color: AppColors.baliHai,
-                        ),
-
-                        prefixIcon: Icon(
-                          Icons.mail_outline,
-                          color: AppColors.baliHai,
-                        ),
-
-                        filled: true,
-                        fillColor: Colors.white,
-                        contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 15,
-                          vertical: 20,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius
-                              .zero, // مستطيل تمامًا بدون زوايا دائرية
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: AppColors.zircon,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.zero,
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: AppColors.zircon,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.zero,
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: AppColors.dodgerBlue,
-                          ), // لون عند الضغط
-                        ),
-                      ),
-                    ),
+                    child: TextFields.registerEmail,
                   ),
+                  //_________________________________________
                   const SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(
@@ -354,12 +246,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           if (_formfield.currentState!.validate()) {
                             print('Success');
                             nameController.clear();
-                            emailController.clear();
+                            regEmailController.clear();
                             passController1.clear();
                             passController2.clear();
                           }
                         },
-                        child: const SizedBox(
+                        child: SizedBox(
                           width: double.infinity,
                           height: 60,
                           child: Center(
@@ -369,7 +261,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 fontWeight: FontWeight.w900,
                                 fontSize: 15,
                               ),
-                              'Sign up',
+                              'singUpButton'.tr(),
                             ),
                           ),
                         ),
@@ -382,7 +274,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                     children: [
                       Text(
-                        'have a account?',
+                        'haveacc'.tr(),
                         style: TextStyle(color: AppColors.baliHai),
                       ),
                       const SizedBox(width: 2.5),
@@ -393,7 +285,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           });
                         },
                         child: Text(
-                          'Sign In',
+                          'singInButton'.tr(),
                           style: TextStyle(
                             color: AppColors.dodgerBlue,
                             fontWeight: FontWeight.bold,

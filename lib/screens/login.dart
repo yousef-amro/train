@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:train/core/constants.dart';
 import 'package:train/screens/register.dart';
-import 'package:train/core/constants.dart';
+import 'package:train/core/widgets.dart';
+import 'package:train/core/Localization.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -10,13 +12,12 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  @override
-  final _formfield = GlobalKey<FormState>();
-  final emailController = TextEditingController();
-  final passController = TextEditingController();
-  bool passToggel = true;
+final _formfield = GlobalKey<FormState>();
+final emailController = TextEditingController();
+final passController = TextEditingController();
+bool passToggel = true;
 
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,13 +28,28 @@ class _LoginScreenState extends State<LoginScreen> {
           child: SingleChildScrollView(
             child: Form(
               key: _formfield,
+
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            AppLocalizationsHelper.changeLanguage(
+                              context,
+                            );
+                          });
+                        },
+                        child: Text('trans'),
+                      ),
+                    ],
+                  ),
                   Image.asset(Images.logo2, height: 72, width: 72),
                   const SizedBox(height: 15),
                   Text(
-                    'Welcome to Lafyuu',
+                    'welcome'.tr(),
                     style: TextStyle(
                       color: AppColors.cello,
                       fontWeight: FontWeight.w700,
@@ -46,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontSize: 16,
                       color: AppColors.baliHai,
                     ),
-                    'Sign in to continue',
+                    'singInMessage'.tr(),
                   ),
                   const SizedBox(height: 30),
                   Padding(
@@ -54,69 +70,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       left: 12,
                       right: 12,
                     ),
-                    // ================================================
-                    child: TextFormField(
-                      controller:
-                          emailController, // ✅ هنا ضفنا الكنترولر
-
-                      keyboardType: TextInputType.emailAddress,
-
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return "Enter Email";
-                        }
-                        bool emailValid = RegExp(
-                          Validates.email,
-                        ).hasMatch(value);
-                        if (!emailValid) {
-                          return "Enter Valid Email";
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        hintText: 'Your Email',
-                        hintStyle: TextStyle(
-                          color: AppColors.baliHai,
-                        ),
-
-                        prefixIcon: Icon(
-                          Icons.mail_outline,
-                          color: AppColors.baliHai,
-                        ),
-
-                        filled: true,
-                        fillColor: Colors.white,
-                        contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 15,
-                          vertical: 20,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius
-                              .zero, // مستطيل تمامًا بدون زوايا دائرية
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: AppColors.zircon,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.zero,
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: AppColors.zircon,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.zero,
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: AppColors.dodgerBlue,
-                          ), // لون عند الضغط
-                        ),
-                      ),
-                    ),
+                    // =============== Email Text Field ====================
+                    child: TextFields.emailTextField,
                   ),
                   const SizedBox(height: 10),
-                  // ================================================
+                  // ==============Password Text Field====================
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 12,
@@ -186,6 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
+                    //  // ================== Sign in button ================
                   ),
                   const SizedBox(height: 20),
                   Padding(
@@ -218,7 +177,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         },
 
-                        child: const SizedBox(
+                        child: SizedBox(
                           width: double.infinity,
                           height: 60,
                           child: Center(
@@ -228,14 +187,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                 fontWeight: FontWeight.w900,
                                 fontSize: 15,
                               ),
-                              'Sign In',
+                              "singInButton".tr(),
                             ),
                           ),
                         ),
                       ),
                     ),
                   ),
+
                   const SizedBox(height: 20),
+
                   Row(
                     children: [
                       const SizedBox(width: 15),
@@ -252,7 +213,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           right: 30,
                         ),
                         child: Text(
-                          'OR',
+                          'or'.tr(),
                           style: TextStyle(
                             color: AppColors.baliHai,
                             fontSize: 15,
@@ -272,100 +233,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
 
                   const SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 12,
-                      right: 12,
-                    ),
-                    child: RawMaterialButton(
-                      fillColor: Colors.white,
-                      hoverColor: AppColors.zircon,
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: AppColors.zircon,
-                          width: 1.5,
-                        ), // الإطار الأسود
-                        borderRadius: BorderRadius.circular(
-                          5,
-                        ), // لتدوير الزوايا (اختياري)
-                      ),
-                      elevation: 0,
-                      onPressed: () {},
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 60,
-                        child: Stack(
-                          alignment: AlignmentGeometry.centerLeft,
-
-                          children: [
-                            Image.asset(
-                              Images.googlelogo,
-                              width: 50, // العرض
-                              height: 50, // الطول
-                            ),
-                            Center(
-                              child: Text(
-                                style: TextStyle(
-                                  color: AppColors.baliHai,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                                'Login with Google',
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+                  // ================== Google sing in buton ================
+                  TextFields.GoogleSignIn,
                   const SizedBox(height: 10),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 12,
-                      right: 12,
-                    ),
-                    child: RawMaterialButton(
-                      fillColor: Colors.white,
-                      hoverColor: AppColors.zircon,
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: AppColors.zircon,
-                          width: 1.5,
-                        ), // الإطار الأسود
-                        borderRadius: BorderRadius.circular(
-                          5,
-                        ), // لتدوير الزوايا (اختياري)
-                      ),
-                      elevation: 0,
-                      onPressed: () {},
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 60,
-                        child: Stack(
-                          alignment: AlignmentGeometry.centerLeft,
-
-                          children: [
-                            Image.asset(
-                              Images.facebooklogo,
-                              width: 50, // العرض
-                              height: 50, // الطول
-                            ),
-                            Center(
-                              child: Text(
-                                style: TextStyle(
-                                  color: AppColors.baliHai,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                                'Login with facebook',
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-
+                  // ================== Facebook sing in buton ================
+                  TextFields.FacebookeSignIn,
                   const SizedBox(height: 20),
                   GestureDetector(
                     onTap: () {
@@ -374,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       });
                     },
                     child: Text(
-                      'Forgot Password?',
+                      'forgotPassword'.tr(),
                       style: TextStyle(
                         color: AppColors.dodgerBlue,
                         fontSize: 14,
@@ -388,7 +260,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     children: [
                       Text(
-                        'Don’t have a account?',
+                        'donthaveacc'.tr(),
                         style: TextStyle(color: AppColors.baliHai),
                       ),
                       const SizedBox(width: 2.5),
@@ -405,7 +277,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           });
                         },
                         child: Text(
-                          'Register',
+                          'Register'.tr(),
                           style: TextStyle(
                             color: AppColors.dodgerBlue,
                             fontWeight: FontWeight.bold,

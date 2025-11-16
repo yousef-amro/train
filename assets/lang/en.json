@@ -1,0 +1,17 @@
+{
+  "welcome" : "Welcome to Lafyuu",
+  "singInMessage" : "Sign in to continue",
+  "emailMessage" : "Your Email",
+  "passWordMessage" : "Password",
+  "passWord2Message" : "Rewrite Password",
+  "nameMessage" : "FullName",
+  "singInButton" : "Sign In",
+  "or" : "OR",
+  "googleLogin" : "Login with Google",
+  "facebookLogin" : "Login with Facebook",
+  "forgotPassword" : "Forgot Password?",
+  "donthaveacc" : "Don’t have an account?",
+  "Register" : "Register",
+  "singUpButton" : "Sign up",
+  "haveacc" : "have a account?"
+}
