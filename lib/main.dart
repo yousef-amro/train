@@ -8,10 +8,10 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(
-      child: MyApp(),
       supportedLocales: [Locale('en'), Locale('ar')],
       path: 'assets/lang',
       fallbackLocale: Locale('en'),
+      child: MyApp(),
     ),
   );
 }
