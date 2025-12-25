@@ -1,7 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
-import 'package:train/views/loginPage/view.dart';
+import 'package:train/views/registerPage/view.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class signInButton extends StatelessWidget {
   const signInButton({super.key});
@@ -29,11 +29,12 @@ class signInButton extends StatelessWidget {
           onPressed: () {
             if (formfield.currentState!.validate()) {
               print('Success');
-              emailController.clear();
-              passController.clear();
+              nameController.clear();
+              regEmailController.clear();
+              passController1.clear();
+              passController2.clear();
             }
           },
-
           child: SizedBox(
             width: double.infinity,
             height: 60,
@@ -44,7 +45,7 @@ class signInButton extends StatelessWidget {
                   fontWeight: FontWeight.w900,
                   fontSize: 15,
                 ),
-                "singInButton".tr(),
+                'singUpButton'.tr(),
               ),
             ),
           ),

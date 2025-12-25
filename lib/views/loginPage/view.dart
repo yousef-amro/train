@@ -1,15 +1,10 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:train/core/constants/appColorsConstants.dart';
-import 'package:train/views/loginPage/widgets/facobook_Button.dart';
-import 'package:train/views/loginPage/widgets/google_Button.dart';
-import 'package:train/views/loginPage/widgets/login_Password.dart';
+import 'package:train/views/loginPage/components/intro_header_component.dart';
+import 'package:train/views/loginPage/components/new_account_component.dart';
+import 'package:train/views/loginPage/components/social_media_component.dart';
+import 'package:train/views/loginPage/components/text_fields_component.dart';
 import 'package:train/views/loginPage/widgets/or_Widget.dart';
 import 'package:train/views/loginPage/widgets/signIn_Button.dart';
-import 'package:train/views/registerPage/view.dart';
-import 'package:train/core/Localization/Localization.dart';
-import 'widgets/login_Email.dart';
-import 'package:train/core/constants/imagesConstants.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -34,54 +29,14 @@ class _LoginScreenState extends State<LoginScreen> {
           child: SingleChildScrollView(
             child: Form(
               key: formfield,
-
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Row(
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            AppLocalizationsHelper.changeLanguage(
-                              context,
-                            );
-                          });
-                        },
-                        child: Text('trans'),
-                      ),
-                    ],
-                  ),
-                  Image.asset(Images.logo2, height: 72, width: 72),
-                  const SizedBox(height: 15),
-                  Text(
-                    'welcome'.tr(),
-                    style: TextStyle(
-                      color: AppColors.cello,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 22,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: AppColors.baliHai,
-                    ),
-                    'singInMessage'.tr(),
-                  ),
+                  IntroHeaderComponent(),
+
                   const SizedBox(height: 30),
 
-                  LoginEmail(),
-
-                  const SizedBox(height: 10),
-
-                  PasswordField(
-                    controller: passController,
-                    obscure: passToggel,
-                    onToggle: () =>
-                        setState(() => passToggel = !passToggel),
-                  ),
+                  TextFieldsComponents(),
 
                   const SizedBox(height: 20),
 
@@ -92,59 +47,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   OrWidget(),
 
                   const SizedBox(height: 20),
-                  // ================== Google sing in buton ================
-                  GoogleLoginButton(),
-                  const SizedBox(height: 10),
-                  // ================== Facebook sing in buton ================
-                  FaceBookLoginButton(),
-                  const SizedBox(height: 20),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        print('yoyo');
-                      });
-                    },
-                    child: Text(
-                      'forgotPassword'.tr(),
-                      style: TextStyle(
-                        color: AppColors.dodgerBlue,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
 
-                    children: [
-                      Text(
-                        'donthaveacc'.tr(),
-                        style: TextStyle(color: AppColors.baliHai),
-                      ),
-                      const SizedBox(width: 2.5),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    RegisterScreen(),
-                              ),
-                            );
-                          });
-                        },
-                        child: Text(
-                          'Register'.tr(),
-                          style: TextStyle(
-                            color: AppColors.dodgerBlue,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  SocialMediaComponent(),
+
+                  const SizedBox(height: 20),
+                  NewAccountComponent(),
                 ],
               ),
             ),

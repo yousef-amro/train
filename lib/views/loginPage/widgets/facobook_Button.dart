@@ -14,13 +14,8 @@ class FaceBookLoginButton extends StatelessWidget {
         fillColor: Colors.white,
         hoverColor: AppColors.zircon,
         shape: RoundedRectangleBorder(
-          side: BorderSide(
-            color: AppColors.zircon,
-            width: 1.5,
-          ), // الإطار الأسود
-          borderRadius: BorderRadius.circular(
-            5,
-          ), // لتدوير الزوايا (اختياري)
+          side: BorderSide(color: AppColors.zircon, width: 1.5),
+          borderRadius: BorderRadius.circular(5),
         ),
         elevation: 0,
         onPressed: () {},
@@ -31,11 +26,7 @@ class FaceBookLoginButton extends StatelessWidget {
             alignment: Alignment.centerLeft,
 
             children: [
-              Image.asset(
-                Images.facebooklogo,
-                width: 50, // العرض
-                height: 50, // الطول
-              ),
+              Image.asset(assets.facebooklogo, width: 50, height: 50),
               Center(
                 child: Text(
                   style: TextStyle(

@@ -9,51 +9,54 @@ class RegisterEmail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: regEmailController,
+    return Padding(
+      padding: const EdgeInsets.only(left: 12, right: 12),
 
-      keyboardType: TextInputType.emailAddress,
+      child: TextFormField(
+        controller: regEmailController,
 
-      validator: (value) {
-        if (value!.isEmpty) {
-          return 'emailMessage'.tr();
-        }
-        bool emailValid = RegExp(Validates.email).hasMatch(value);
-        if (!emailValid) {
-          return "Enter Valid Email";
-        }
-        return null;
-      },
-      decoration: InputDecoration(
-        hintText: 'emailMessage'.tr(),
-        hintStyle: TextStyle(color: AppColors.baliHai),
+        keyboardType: TextInputType.emailAddress,
 
-        prefixIcon: Icon(
-          Icons.mail_outline,
-          color: AppColors.baliHai,
-        ),
+        validator: (value) {
+          if (value!.isEmpty) {
+            return 'emailMessage'.tr();
+          }
+          bool emailValid = RegExp(Validates.email).hasMatch(value);
+          if (!emailValid) {
+            return "Enter Valid Email";
+          }
+          return null;
+        },
+        decoration: InputDecoration(
+          hintText: 'emailMessage'.tr(),
+          hintStyle: TextStyle(color: AppColors.baliHai),
 
-        filled: true,
-        fillColor: Colors.white,
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 15,
-          vertical: 20,
-        ),
-        border: OutlineInputBorder(
-          borderRadius:
-              BorderRadius.zero, // مستطيل تمامًا بدون زوايا دائرية
-          borderSide: BorderSide(width: 2, color: AppColors.zircon),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.zero,
-          borderSide: BorderSide(width: 2, color: AppColors.zircon),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.zero,
-          borderSide: BorderSide(
-            width: 2,
-            color: AppColors.dodgerBlue,
-          ), // لون عند الضغط
+          prefixIcon: Icon(
+            Icons.mail_outline,
+            color: AppColors.baliHai,
+          ),
+
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 15,
+            vertical: 20,
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.zero,
+            borderSide: BorderSide(width: 2, color: AppColors.zircon),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.zero,
+            borderSide: BorderSide(width: 2, color: AppColors.zircon),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.zero,
+            borderSide: BorderSide(
+              width: 2,
+              color: AppColors.dodgerBlue,
+            ),
+          ),
         ),
       ),
     );

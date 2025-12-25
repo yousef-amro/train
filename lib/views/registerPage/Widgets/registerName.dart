@@ -10,7 +10,7 @@ class RegisterName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: nameController, // ✅ هنا ضفنا الكنترولر
+      controller: nameController,
 
       validator: (value) {
         if (value!.isEmpty) {
@@ -38,8 +38,7 @@ class RegisterName extends StatelessWidget {
           vertical: 20,
         ),
         border: OutlineInputBorder(
-          borderRadius:
-              BorderRadius.zero, // مستطيل تمامًا بدون زوايا دائرية
+          borderRadius: BorderRadius.zero,
           borderSide: BorderSide(width: 2, color: AppColors.zircon),
         ),
         enabledBorder: OutlineInputBorder(
@@ -51,7 +50,7 @@ class RegisterName extends StatelessWidget {
           borderSide: BorderSide(
             width: 2,
             color: AppColors.dodgerBlue,
-          ), // لون عند الضغط
+          ),
         ),
       ),
     );
