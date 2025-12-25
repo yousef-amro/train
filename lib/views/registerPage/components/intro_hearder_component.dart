@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:train/core/constants/appColorsConstants.dart';
 import 'package:train/core/localization/localization.dart';
+import 'package:train/core/constants/appColorsConstants.dart';
 import 'package:train/core/constants/imagesConstants.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 class IntroHeaderComponent extends StatefulWidget {
   const IntroHeaderComponent({super.key});
 
   @override
-  State<IntroHeaderComponent> createState() => _IntroHeaderState();
+  State<IntroHeaderComponent> createState() =>
+      _IntroHeaderComponentState();
 }
 
-class _IntroHeaderState extends State<IntroHeaderComponent> {
+class _IntroHeaderComponentState extends State<IntroHeaderComponent> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,17 +31,17 @@ class _IntroHeaderState extends State<IntroHeaderComponent> {
         Image.asset(assets.logo2, height: 72, width: 72),
         const SizedBox(height: 15),
         Text(
-          'welcome'.tr(),
+          'Let’s Get Started',
           style: TextStyle(
-            color: AppColors.baliHai,
-            fontWeight: FontWeight.w700,
-            fontSize: 22,
+            color: Color(0xff223263),
+            fontWeight: FontWeight.w900,
+            fontSize: 21,
           ),
         ),
         const SizedBox(height: 10),
         Text(
           style: TextStyle(fontSize: 16, color: AppColors.baliHai),
-          'singInMessage'.tr(),
+          'Create an new account',
         ),
       ],
     );
