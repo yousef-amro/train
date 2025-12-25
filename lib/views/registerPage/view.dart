@@ -1,8 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:train/core/constants.dart';
+import 'package:train/core/constants/appColorsConstants.dart';
 import 'package:train/views/registerPage/Widgets/registerEmail.dart';
 import 'package:train/views/registerPage/Widgets/registerName.dart';
+import 'package:train/core/constants/imagesConstants.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:train/core/constants.dart';
+import 'package:train/core/constants/appColorsConstants.dart';
 import 'package:train/views/registerPage/view.dart';
+import 'package:train/core/constants/validatesConstants.dart';
 
 class RegisterEmail extends StatelessWidget {
   const RegisterEmail({super.key});

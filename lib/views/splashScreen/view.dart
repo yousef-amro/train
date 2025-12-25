@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:train/views/loginPage/view.dart';
-import 'package:train/core/constants.dart';
+import 'package:train/core/constants/imagesConstants.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,7 +14,6 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    // بعد 3 ثواني هينتقل للشاشة التانية
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,

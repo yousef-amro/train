@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:train/core/constants.dart';
+import 'package:train/core/constants/appColorsConstants.dart';
 import 'package:train/views/loginPage/view.dart';
 
 class signInButton extends StatelessWidget {

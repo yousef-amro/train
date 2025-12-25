@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:train/core/constants.dart';
+import 'package:train/core/constants/appColorsConstants.dart';
 import 'package:train/views/loginPage/Widgets/facobookButton.dart';
 import 'package:train/views/loginPage/Widgets/googleButton.dart';
 import 'package:train/views/loginPage/Widgets/loginPassword.dart';
@@ -9,6 +9,7 @@ import 'package:train/views/loginPage/Widgets/signInButton.dart';
 import 'package:train/views/registerPage/view.dart';
 import 'package:train/views/Localization/Localization.dart';
 import 'Widgets/loginEmail.dart';
+import 'package:train/core/constants/imagesConstants.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
