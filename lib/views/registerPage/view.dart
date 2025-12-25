@@ -91,7 +91,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             passController1.text) {
                           return "Password doesn't match ";
                         }
-
                         return null;
                       },
 

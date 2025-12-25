@@ -1,14 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
-import 'package:train/views/loginPage/Widgets/facobookButton.dart';
-import 'package:train/views/loginPage/Widgets/googleButton.dart';
-import 'package:train/views/loginPage/Widgets/loginPassword.dart';
-import 'package:train/views/loginPage/Widgets/orWidget.dart';
-import 'package:train/views/loginPage/Widgets/signInButton.dart';
+import 'package:train/views/loginPage/widgets/facobook_Button.dart';
+import 'package:train/views/loginPage/widgets/google_Button.dart';
+import 'package:train/views/loginPage/widgets/login_Password.dart';
+import 'package:train/views/loginPage/widgets/or_Widget.dart';
+import 'package:train/views/loginPage/widgets/signIn_Button.dart';
 import 'package:train/views/registerPage/view.dart';
-import 'package:train/views/Localization/Localization.dart';
-import 'Widgets/loginEmail.dart';
+import 'package:train/core/Localization/Localization.dart';
+import 'widgets/login_Email.dart';
 import 'package:train/core/constants/imagesConstants.dart';
 
 class LoginScreen extends StatefulWidget {
