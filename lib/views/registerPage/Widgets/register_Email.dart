@@ -30,35 +30,28 @@ class RegisterEmail extends StatelessWidget {
         decoration: InputDecoration(
           hintText: 'emailMessage'.tr(),
           hintStyle: TextStyle(color: AppColors.baliHai),
-
           prefixIcon: Icon(
             Icons.mail_outline,
             color: AppColors.baliHai,
           ),
-
           filled: true,
           fillColor: Colors.white,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 15,
             vertical: 20,
           ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.zero,
-            borderSide: BorderSide(width: 2, color: AppColors.zircon),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.zero,
-            borderSide: BorderSide(width: 2, color: AppColors.zircon),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.zero,
-            borderSide: BorderSide(
-              width: 2,
-              color: AppColors.dodgerBlue,
-            ),
-          ),
+          border: defaultBorder(),
+          enabledBorder: defaultBorder(),
+          focusedBorder: defaultBorder(color: AppColors.dodgerBlue),
         ),
       ),
     );
   }
+
+  OutlineInputBorder defaultBorder({
+    Color color = AppColors.zircon,
+  }) => OutlineInputBorder(
+    borderRadius: BorderRadius.zero,
+    borderSide: BorderSide(width: 2, color: color),
+  );
 }
