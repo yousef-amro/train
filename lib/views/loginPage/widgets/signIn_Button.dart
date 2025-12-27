@@ -1,13 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
-import 'package:train/views/loginPage/view.dart';
+import 'package:train/views/loginPage/controller/login_cubit.dart';
 
 class signInButton extends StatelessWidget {
   const signInButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final LoginCubit cubit = context.read<LoginCubit>();
+
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12),
       child: Container(
@@ -27,13 +30,8 @@ class signInButton extends StatelessWidget {
           ),
           elevation: 0,
           onPressed: () {
-            if (formfield.currentState!.validate()) {
-              print('Success');
-              emailController.clear();
-              passController.clear();
-            }
+            bool isValid = cubit.loginModel.isValid;
           },
-
           child: SizedBox(
             width: double.infinity,
             height: 60,

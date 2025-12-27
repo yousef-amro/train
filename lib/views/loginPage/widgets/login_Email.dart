@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:train/views/loginPage/view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:train/views/loginPage/controller/login_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
 import 'package:train/core/constants/validatesConstants.dart';
@@ -9,10 +10,11 @@ class LoginEmail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final LoginCubit cubit = context.read<LoginCubit>();
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12),
       child: TextFormField(
-        controller: emailController,
+        controller: cubit.loginModel.emailController,
 
         keyboardType: TextInputType.emailAddress,
 
