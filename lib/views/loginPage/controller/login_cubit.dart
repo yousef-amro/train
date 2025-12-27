@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:train/core/model/login_model.dart';
 import 'package:train/views/loginPage/controller/login_state.dart';
 
@@ -10,7 +11,7 @@ class LoginCubit extends Cubit<LoginState> {
   bool passToggel = true;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  void login() async {
+  void login(BuildContext context) async {
     if (loginModel.isValid) {
       UserCredential userCredential = await _auth
           .signInWithEmailAndPassword(
@@ -19,6 +20,9 @@ class LoginCubit extends Cubit<LoginState> {
           );
       if (userCredential.credential == null) {
         // Show to user snack bar with error message says User not found
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text("No user")));
       } else {
         // Redirect user to HomePage
       }

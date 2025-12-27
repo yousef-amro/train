@@ -30,7 +30,7 @@ class signInButton extends StatelessWidget {
           ),
           elevation: 0,
           onPressed: () {
-            bool isValid = cubit.loginModel.isValid;
+            cubit.login(context);
           },
           child: SizedBox(
             width: double.infinity,
