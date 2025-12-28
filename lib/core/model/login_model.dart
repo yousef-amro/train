@@ -1,11 +1,14 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class LoginModel {
   final GlobalKey<FormState> formField = GlobalKey<FormState>();
-  final TextEditingController emailController =
-      TextEditingController();
-  final TextEditingController passController =
-      TextEditingController();
+  final TextEditingController emailController = TextEditingController(
+    text: kDebugMode ? "testEmail@gmail.com" : "",
+  );
+  final TextEditingController passController = TextEditingController(
+    text: kDebugMode ? "12341234" : "",
+  );
 
   LoginModel();
 

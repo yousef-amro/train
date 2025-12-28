@@ -13,18 +13,16 @@ class LoginCubit extends Cubit<LoginState> {
 
   void login(BuildContext context) async {
     if (loginModel.isValid) {
-      UserCredential userCredential = await _auth
-          .signInWithEmailAndPassword(
-            email: loginModel.emailController.text,
-            password: loginModel.passController.text,
-          );
-      if (userCredential.credential == null) {
-        // Show to user snack bar with error message says User not found
+      try {
+        UserCredential userCredential = await _auth
+            .signInWithEmailAndPassword(
+              email: loginModel.emailController.text,
+              password: loginModel.passController.text,
+            );
+      } on FirebaseException catch (e) {
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text("No user")));
-      } else {
-        // Redirect user to HomePage
       }
     }
   }
