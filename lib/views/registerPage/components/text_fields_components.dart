@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:train/views/registerPage/controller/register_cubit.dart';
 import 'package:train/views/registerPage/widgets/register_password.dart';
 import 'package:train/views/registerPage/widgets/register_Email.dart';
 import 'package:train/views/registerPage/widgets/register_Name.dart';
@@ -15,6 +16,7 @@ class TextFieldsComponents extends StatefulWidget {
 class _TextFieldsComponentsState extends State<TextFieldsComponents> {
   @override
   Widget build(BuildContext context) {
+    RegisterCubit cubit = RegisterCubit();
     return Column(
       children: [
         RegisterName(),
@@ -26,20 +28,26 @@ class _TextFieldsComponentsState extends State<TextFieldsComponents> {
         const SizedBox(height: 10),
 
         PasswordField(
-          controller: passController1,
-          obscure: passToggel1,
+          controller: cubit.registerModel.passController1,
+          obscure: cubit.registerModel.passToggle1,
           hint: 'Password',
           otherController: null,
-          onToggle: () => setState(() => passToggel1 = !passToggel1),
+          onToggle: () => setState(
+            () => cubit.registerModel.passToggle1 =
+                !cubit.registerModel.passToggle1,
+          ),
         ),
         const SizedBox(height: 10),
 
         PasswordField(
-          controller: passController2,
-          obscure: passToggel2,
+          controller: cubit.registerModel.passController2,
+          obscure: cubit.registerModel.passToggle2,
           hint: 'Password Again',
-          otherController: passController1,
-          onToggle: () => setState(() => passToggel2 = !passToggel2),
+          otherController: null,
+          onToggle: () => setState(
+            () => cubit.registerModel.passToggle2 =
+                !cubit.registerModel.passToggle2,
+          ),
         ),
       ],
     );

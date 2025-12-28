@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
+import 'package:train/views/loginPage/controller/login_cubit.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({
@@ -20,10 +22,11 @@ class PasswordField extends StatefulWidget {
 class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
+    final LoginCubit cubit = context.read<LoginCubit>();
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12),
       child: TextFormField(
-        controller: widget.controller,
+        controller: cubit.loginModel.passController,
         obscureText: widget.obscure,
         validator: (value) {
           if (value == null || value.isEmpty) return "Enter Password";

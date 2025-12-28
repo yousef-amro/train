@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
-import 'package:train/views/registerPage/view.dart';
+import 'package:train/core/model/register_model.dart';
 import 'package:train/core/constants/validatesConstants.dart';
 
 class RegisterEmail extends StatelessWidget {
@@ -9,11 +9,12 @@ class RegisterEmail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    RegisterModel cubit = RegisterModel();
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12),
 
       child: TextFormField(
-        controller: regEmailController,
+        controller: cubit.regEmailController,
 
         keyboardType: TextInputType.emailAddress,
 

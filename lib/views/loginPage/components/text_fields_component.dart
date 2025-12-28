@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:train/views/loginPage/controller/login_cubit.dart';
-import 'package:train/views/loginPage/view.dart';
 import 'package:train/views/loginPage/widgets/login_Email.dart';
 import 'package:train/views/loginPage/widgets/login_Password.dart';
 

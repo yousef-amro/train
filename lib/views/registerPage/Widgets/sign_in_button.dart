@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
+import 'package:train/core/model/register_model.dart';
+import 'package:train/views/registerPage/controller/register_cubit.dart';
 import 'package:train/views/registerPage/view.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -8,6 +11,7 @@ class signInButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final RegisterCubit cubit = context.read<RegisterCubit>();
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12),
       child: Container(
@@ -27,12 +31,10 @@ class signInButton extends StatelessWidget {
           ),
           elevation: 0,
           onPressed: () {
-            if (formfield.currentState!.validate()) {
+            if (cubit.registerModel.formField.currentState!
+                .validate()) {
               print('Success');
-              nameController.clear();
-              regEmailController.clear();
-              passController1.clear();
-              passController2.clear();
+              cubit.register(context);
             }
           },
           child: SizedBox(
