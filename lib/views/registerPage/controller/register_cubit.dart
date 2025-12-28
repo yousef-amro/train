@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 import 'package:train/core/model/register_model.dart';
 import 'package:train/views/registerPage/controller/register_state.dart';
 
@@ -19,10 +18,10 @@ class RegisterCubit extends Cubit<RegisterState> {
           email: registerModel.regEmailController.text,
           password: registerModel.passController1.text,
         );
-      } on FirebaseException {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Cant create accountD")),
-        );
+      } catch (e) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(e.toString())));
       }
     }
   }

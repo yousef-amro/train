@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
-import 'package:train/core/model/register_model.dart';
 import 'package:train/views/registerPage/controller/register_cubit.dart';
-import 'package:train/views/registerPage/view.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class signInButton extends StatelessWidget {
@@ -31,12 +29,9 @@ class signInButton extends StatelessWidget {
           ),
           elevation: 0,
           onPressed: () {
-            if (cubit.registerModel.formField.currentState!
-                .validate()) {
-              print('Success');
-              cubit.register(context);
-            }
+            cubit.register(context);
           },
+
           child: SizedBox(
             width: double.infinity,
             height: 60,

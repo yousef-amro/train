@@ -3,16 +3,21 @@ import 'package:flutter/material.dart';
 
 class RegisterModel {
   final GlobalKey<FormState> formField = GlobalKey<FormState>();
-  final TextEditingController nameController =
-      TextEditingController();
+  final TextEditingController nameController = TextEditingController(
+    text: kDebugMode ? "yousef amr" : "",
+  );
   final TextEditingController regEmailController =
-      TextEditingController();
-  final TextEditingController passController1 =
-      TextEditingController();
-  final TextEditingController passController2 =
-      TextEditingController();
-  bool passToggle1 = true;
-  bool passToggle2 = true;
+      TextEditingController(
+        text: kDebugMode ? "yoyo2007pc@gmail.com" : "",
+      );
+  final TextEditingController passController1 = TextEditingController(
+    text: kDebugMode ? "12341234" : "",
+  );
+  final TextEditingController passController2 = TextEditingController(
+    text: kDebugMode ? "12341234" : "",
+  );
+  bool passToggle1 = false;
+  bool passToggle2 = false;
 
   RegisterModel();
 
