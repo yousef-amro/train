@@ -29,9 +29,9 @@ class signInButton extends StatelessWidget {
           ),
           elevation: 0,
           onPressed: () {
+            print(cubit.registerModel.passController1.text);
             cubit.register(context);
           },
-
           child: SizedBox(
             width: double.infinity,
             height: 60,

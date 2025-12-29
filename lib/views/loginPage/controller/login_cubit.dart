@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:train/core/model/login_model.dart';
+import 'package:train/views/appScreen/view.dart';
 import 'package:train/views/loginPage/controller/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
@@ -17,6 +18,11 @@ class LoginCubit extends Cubit<LoginState> {
         await _auth.signInWithEmailAndPassword(
           email: loginModel.emailController.text,
           password: loginModel.passController.text,
+        );
+        loginModel.clearInputs();
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const AppScreen()),
         );
       } on FirebaseException {
         ScaffoldMessenger.of(

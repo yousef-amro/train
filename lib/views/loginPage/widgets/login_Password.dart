@@ -30,8 +30,9 @@ class _PasswordFieldState extends State<PasswordField> {
         obscureText: widget.obscure,
         validator: (value) {
           if (value == null || value.isEmpty) return "Enter Password";
-          if (value.length < 6)
+          if (value.length < 6) {
             return "Password Length Should be more than 6 characters";
+          }
           return null;
         },
         decoration: InputDecoration(

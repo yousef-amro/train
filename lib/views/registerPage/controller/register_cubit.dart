@@ -18,7 +18,10 @@ class RegisterCubit extends Cubit<RegisterState> {
           email: registerModel.regEmailController.text,
           password: registerModel.passController1.text,
         );
-      } catch (e) {
+        registerModel.clearInputs();
+      } catch (e, s) {
+        print("${(e is FirebaseAuthException ? e.code : e)}");
+        print("e : $e , s $s");
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text(e.toString())));

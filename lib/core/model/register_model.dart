@@ -24,12 +24,15 @@ class RegisterModel {
   bool get isValid {
     if (formField.currentState!.validate()) {
       print('Success');
-      nameController.clear();
-      regEmailController.clear();
-      passController1.clear();
-      passController2.clear();
       return true;
     }
     return false;
+  }
+
+  void clearInputs() {
+    nameController.clear();
+    regEmailController.clear();
+    passController1.clear();
+    passController2.clear();
   }
 }

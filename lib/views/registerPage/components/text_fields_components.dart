@@ -4,7 +4,6 @@ import 'package:train/core/constants/appColorsConstants.dart';
 import 'package:train/views/registerPage/controller/register_cubit.dart';
 import 'package:train/views/registerPage/widgets/register_Email.dart';
 import 'package:train/views/registerPage/widgets/register_Name.dart';
-import 'package:train/views/registerPage/view.dart';
 
 class TextFieldsComponents extends StatefulWidget {
   const TextFieldsComponents({super.key});
@@ -33,10 +32,12 @@ class _TextFieldsComponentsState extends State<TextFieldsComponents> {
           child: TextFormField(
             controller: cubit.registerModel.passController1,
             validator: (value) {
-              if (value == null || value.isEmpty)
+              if (value == null || value.isEmpty) {
                 return "Enter Password";
-              if (value.length < 6)
+              }
+              if (value.length < 6) {
                 return "Password Length Should be more than 6 characters";
+              }
               return null;
             },
             decoration: InputDecoration(
@@ -83,10 +84,12 @@ class _TextFieldsComponentsState extends State<TextFieldsComponents> {
           child: TextFormField(
             controller: cubit.registerModel.passController2,
             validator: (value) {
-              if (value == null || value.isEmpty)
+              if (value == null || value.isEmpty) {
                 return "Enter Password";
-              if (value.length < 6)
+              }
+              if (value.length < 6) {
                 return "Password Length Should be more than 6 characters";
+              }
               return null;
             },
             decoration: InputDecoration(

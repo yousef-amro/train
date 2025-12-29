@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class LoginModel {
   final GlobalKey<FormState> formField = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController(
-    text: kDebugMode ? "testEmail@gmail.com" : "",
+    text: kDebugMode ? "yoyo2007pc@gmail.com" : "",
   );
   final TextEditingController passController = TextEditingController(
     text: kDebugMode ? "12341234" : "",
@@ -15,10 +15,14 @@ class LoginModel {
   bool get isValid {
     if (formField.currentState!.validate()) {
       print('Success');
-      emailController.clear();
-      passController.clear();
+
       return true;
     }
     return false;
+  }
+
+  void clearInputs() {
+    emailController.clear();
+    passController.clear();
   }
 }
