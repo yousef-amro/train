@@ -16,6 +16,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   void register(BuildContext context) async {
     if (registerModel.isValid) {
       try {
+        emit(RegisterLoading());
         await _auth.createUserWithEmailAndPassword(
           email: registerModel.regEmailController.text,
           password: registerModel.passController1.text,
@@ -24,17 +25,21 @@ class RegisterCubit extends Cubit<RegisterState> {
           name: registerModel.nameController.text,
           email: registerModel.regEmailController.text,
         );
-        Navigator.push(
+        emit(RegisterSuccess());
+
+        Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (_) => const AppScreen()),
+          (_) {
+            return true;
+          },
         );
         registerModel.clearInputs();
       } catch (e, s) {
+        emit(RegisterError(e.toString()));
+
         print("${(e is FirebaseAuthException ? e.code : e)}");
         print("e : $e , s $s");
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text(e.toString())));
       }
     }
   }

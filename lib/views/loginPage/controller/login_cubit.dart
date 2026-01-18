@@ -15,19 +15,19 @@ class LoginCubit extends Cubit<LoginState> {
   void login(BuildContext context) async {
     if (loginModel.isValid) {
       try {
+        emit(LoginLoading());
         await _auth.signInWithEmailAndPassword(
           email: loginModel.emailController.text,
           password: loginModel.passController.text,
         );
+        emit(LoginSuccess());
         loginModel.clearInputs();
         Navigator.push(
           context,
           MaterialPageRoute(builder: (_) => const AppScreen()),
         );
-      } on FirebaseException {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text("No user")));
+      } catch (e) {
+        emit(LoginError(e.toString()));
       }
     }
   }
