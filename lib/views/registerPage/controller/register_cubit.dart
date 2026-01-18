@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:train/core/model/register_model.dart';
 import 'package:train/core/rebo/user_repo.dart';
+import 'package:train/views/appScreen/view.dart';
 import 'package:train/views/registerPage/controller/register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
@@ -23,7 +24,10 @@ class RegisterCubit extends Cubit<RegisterState> {
           name: registerModel.nameController.text,
           email: registerModel.regEmailController.text,
         );
-
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const AppScreen()),
+        );
         registerModel.clearInputs();
       } catch (e, s) {
         print("${(e is FirebaseAuthException ? e.code : e)}");
