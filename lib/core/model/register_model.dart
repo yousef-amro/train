@@ -23,7 +23,6 @@ class RegisterModel {
 
   bool get isValid {
     if (formField.currentState!.validate()) {
-      print('Success');
       return true;
     }
     return false;

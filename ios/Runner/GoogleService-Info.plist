@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDbD_LWD4liNI70T-4nuvlSiyef7bVTzXs</string>
+	<string>AIzaSyDmBa-lW4YR-OAoV_CbcxoO7dtvQay6k3c</string>
 	<key>GCM_SENDER_ID</key>
-	<string>338750312653</string>
+	<string>985331184933</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.train</string>
 	<key>PROJECT_ID</key>
-	<string>chat-83727</string>
+	<string>store-api-7cdfc</string>
 	<key>STORAGE_BUCKET</key>
-	<string>chat-83727.firebasestorage.app</string>
+	<string>store-api-7cdfc.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:338750312653:ios:95d73d488f66ca8a415984</string>
+	<string>1:985331184933:ios:1c24c8907ae4dfa79d96cc</string>
 </dict>
 </plist>

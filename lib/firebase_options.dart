@@ -44,19 +44,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAMx2AJH1zWqxLJnCf5FEnDGzfrGuGkUXw',
-    appId: '1:338750312653:android:c09c9db262c1648d415984',
-    messagingSenderId: '338750312653',
-    projectId: 'chat-83727',
-    storageBucket: 'chat-83727.firebasestorage.app',
+    apiKey: 'AIzaSyDT3KY8VReGu1_LpFdw4vZeO17FcdABJSY',
+    appId: '1:985331184933:android:c93472be57baaac69d96cc',
+    messagingSenderId: '985331184933',
+    projectId: 'store-api-7cdfc',
+    storageBucket: 'store-api-7cdfc.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDbD_LWD4liNI70T-4nuvlSiyef7bVTzXs',
-    appId: '1:338750312653:ios:95d73d488f66ca8a415984',
-    messagingSenderId: '338750312653',
-    projectId: 'chat-83727',
-    storageBucket: 'chat-83727.firebasestorage.app',
+    apiKey: 'AIzaSyDmBa-lW4YR-OAoV_CbcxoO7dtvQay6k3c',
+    appId: '1:985331184933:ios:1c24c8907ae4dfa79d96cc',
+    messagingSenderId: '985331184933',
+    projectId: 'store-api-7cdfc',
+    storageBucket: 'store-api-7cdfc.firebasestorage.app',
     iosBundleId: 'com.example.train',
   );
 

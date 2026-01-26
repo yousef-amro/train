@@ -5,6 +5,7 @@ import 'package:train/views/registerPage/components/have_account_component.dart'
 import 'package:train/views/registerPage/components/intro_hearder_component.dart';
 import 'package:train/views/registerPage/components/text_fields_components.dart';
 import 'package:train/views/registerPage/controller/register_cubit.dart';
+import 'package:train/views/registerPage/controller/register_state.dart';
 import 'widgets/sign_up_button.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -38,7 +39,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                     const SizedBox(height: 20),
 
-                    signInButton(),
+                    BlocListener<RegisterCubit, RegisterState>(
+                      listener: (context, state) {
+                        if (state is RegisterSuccess) {
+                          // Navigator.pushReplacement(...)
+                        } else if (state is RegisterError) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text(state.message)),
+                          );
+                        }
+                      },
+                      child: const SignUpButton(),
+                    ),
 
                     const SizedBox(height: 20),
 
