@@ -15,9 +15,9 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  RegisterCubit cubit = RegisterCubit();
   @override
   Widget build(BuildContext context) {
-    RegisterCubit cubit = RegisterCubit();
     return BlocProvider(
       create: (context) => cubit,
       child: Scaffold(

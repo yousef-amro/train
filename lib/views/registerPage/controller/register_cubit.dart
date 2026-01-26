@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:train/core/model/register_model.dart';
+import 'package:train/views/appScreen/view.dart';
 import 'package:train/views/registerPage/controller/register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
@@ -19,6 +20,11 @@ class RegisterCubit extends Cubit<RegisterState> {
           password: registerModel.passController1.text,
         );
         registerModel.clearInputs();
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (_) => const AppScreen()),
+          (route) => false, // remove everything
+        );
       } catch (e, s) {
         print("${(e is FirebaseAuthException ? e.code : e)}");
         print("e : $e , s $s");

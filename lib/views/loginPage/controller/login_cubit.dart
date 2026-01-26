@@ -20,9 +20,10 @@ class LoginCubit extends Cubit<LoginState> {
           password: loginModel.passController.text,
         );
         loginModel.clearInputs();
-        Navigator.push(
+        Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (_) => const AppScreen()),
+          (route) => false, // remove everything
         );
       } on FirebaseException {
         ScaffoldMessenger.of(
