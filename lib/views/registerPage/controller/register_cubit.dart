@@ -2,9 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:train/core/model/register_model.dart';
-import 'package:train/views/appScreen/view.dart';
 import 'package:train/core/rebo/user_repo.dart';
-import 'package:train/views/appScreen/view.dart';
+import 'package:train/views/homePage/view.dart';
 import 'package:train/views/registerPage/controller/register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
@@ -28,17 +27,10 @@ class RegisterCubit extends Cubit<RegisterState> {
         );
         emit(RegisterSuccess());
 
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (_) => const AppScreen()),
-          (_) {
-            return true;
-          },
-        );
         registerModel.clearInputs();
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (_) => const AppScreen()),
+          MaterialPageRoute(builder: (_) => const HomePage()),
           (route) => false, // remove everything
         );
       } catch (e, s) {

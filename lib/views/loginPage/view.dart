@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return BlocProvider(
       create: (context) => loginCubit,
       child: Scaffold(
-        backgroundColor: AppColors.backGroundColor,
+        backgroundColor: AppColors.white,
         body: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Center(

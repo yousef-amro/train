@@ -22,7 +22,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return BlocProvider(
       create: (context) => cubit,
       child: Scaffold(
-        backgroundColor: AppColors.backGroundColor,
+        backgroundColor: AppColors.white,
         body: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Center(

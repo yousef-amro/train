@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:train/core/model/login_model.dart';
-import 'package:train/views/appScreen/view.dart';
+import 'package:train/views/homePage/view.dart';
 import 'package:train/views/loginPage/controller/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
@@ -24,7 +24,7 @@ class LoginCubit extends Cubit<LoginState> {
         loginModel.clearInputs();
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (_) => const AppScreen()),
+          MaterialPageRoute(builder: (_) => const HomePage()),
           (route) => false, // remove everything
         );
       } catch (e) {
