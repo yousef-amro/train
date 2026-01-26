@@ -15,15 +15,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ,
       appBar: AppBar(
-        leading: Container(
-          decoration:OutlineInputBorder() 
-          ,
-          width: double.infinity,
-          child: StandardSearchAnchor(
-            searchBar: StandardSearchBar(bgColor: AppColors.white),
-            suggestions: StandardSuggestions(suggestions: []),
+        backgroundColor: Colors.grey,
+        title: PreferredSize(
+          preferredSize: const Size.fromHeight(1111),
+          child: Padding(
+            padding: EdgeInsets.only(top: 200, bottom: 200),
+            child: StandardSearchAnchor(
+              searchBar: StandardSearchBar(bgColor: AppColors.white),
+              suggestions: StandardSuggestions(suggestions: []),
+            ),
           ),
         ),
       ),
