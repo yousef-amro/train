@@ -53,10 +53,7 @@ class LoginEmail extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.zero,
-            borderSide: BorderSide(
-              width: 2,
-              color: AppColors.dodgerBlue,
-            ),
+            borderSide: BorderSide(width: 2, color: AppColors.blue),
           ),
         ),
       ),

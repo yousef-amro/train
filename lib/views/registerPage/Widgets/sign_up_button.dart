@@ -30,7 +30,7 @@ class SignUpButton extends StatelessWidget {
                 ],
               ),
               child: RawMaterialButton(
-                fillColor: AppColors.dodgerBlue,
+                fillColor: AppColors.blue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),

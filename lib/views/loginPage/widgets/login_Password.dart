@@ -72,10 +72,7 @@ class _PasswordFieldState extends State<PasswordField> {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.zero,
-            borderSide: BorderSide(
-              color: AppColors.dodgerBlue,
-              width: 2,
-            ),
+            borderSide: BorderSide(color: AppColors.blue, width: 2),
           ),
         ),
       ),

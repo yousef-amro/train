@@ -25,7 +25,7 @@ class _NewAccountComponentState extends State<NewAccountComponent> {
           child: Text(
             'forgotPassword'.tr(),
             style: TextStyle(
-              color: AppColors.dodgerBlue,
+              color: AppColors.blue,
               fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
@@ -55,7 +55,7 @@ class _NewAccountComponentState extends State<NewAccountComponent> {
               child: Text(
                 'Register'.tr(),
                 style: TextStyle(
-                  color: AppColors.dodgerBlue,
+                  color: AppColors.blue,
                   fontWeight: FontWeight.bold,
                 ),
               ),

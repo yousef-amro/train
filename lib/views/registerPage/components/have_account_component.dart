@@ -33,7 +33,7 @@ class _HaveAccountComponentState extends State<HaveAccountComponent> {
               child: Text(
                 'singInButton'.tr(),
                 style: TextStyle(
-                  color: AppColors.dodgerBlue,
+                  color: AppColors.blue,
                   fontWeight: FontWeight.bold,
                 ),
               ),

@@ -44,7 +44,7 @@ class RegisterEmail extends StatelessWidget {
           ),
           border: defaultBorder(),
           enabledBorder: defaultBorder(),
-          focusedBorder: defaultBorder(color: AppColors.dodgerBlue),
+          focusedBorder: defaultBorder(color: AppColors.blue),
         ),
       ),
     );

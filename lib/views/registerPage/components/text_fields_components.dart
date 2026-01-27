@@ -70,7 +70,7 @@ class _TextFieldsComponentsState extends State<TextFieldsComponents> {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.zero,
                 borderSide: BorderSide(
-                  color: AppColors.dodgerBlue,
+                  color: AppColors.blue,
                   width: 2,
                 ),
               ),
@@ -122,7 +122,7 @@ class _TextFieldsComponentsState extends State<TextFieldsComponents> {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.zero,
                 borderSide: BorderSide(
-                  color: AppColors.dodgerBlue,
+                  color: AppColors.blue,
                   width: 2,
                 ),
               ),
