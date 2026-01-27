@@ -61,7 +61,7 @@ class CategoriesSection extends StatelessWidget {
                   'More Category',
                   style: TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.bold,
                     color: primary,
                   ),
                 ),
@@ -127,7 +127,7 @@ class _CategoryItem extends StatelessWidget {
               height: 74,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(color: border, width: 2),
+                border: Border.all(color: border, width: 1),
               ),
               alignment: Alignment.center,
               child: Icon(icon, color: primary, size: 30),

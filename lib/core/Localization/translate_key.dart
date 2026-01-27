@@ -14,4 +14,6 @@ class TranslateKey {
   static String register = "register";
   static String singUpButton = "singUpButton";
   static String haveacc = "haveacc";
+  static String sellerAccount = "sellerAccount";
+  static String clintAccount = "clintAccount";
 }

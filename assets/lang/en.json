@@ -13,5 +13,7 @@
   "donthaveacc" : "Don’t have an account?",
   "Register" : "register",
   "singUpButton" : "Sign up",
-  "haveacc" : "have a account?"
+  "haveacc" : "have a account?",
+  "sellerAccount" : "Login in as a seller",
+  "clintAccount" : "login in as a clint"
 }

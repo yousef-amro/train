@@ -10,7 +10,6 @@ class UsersRepo {
   }) async {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) throw Exception('User not logged in');
-
     final ref = _db.collection('users').doc(user.uid);
 
     await ref.set({
