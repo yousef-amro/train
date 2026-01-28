@@ -18,6 +18,7 @@ class RegisterModel {
   );
   bool passToggle1 = false;
   bool passToggle2 = false;
+  late String dropdownValue;
 
   RegisterModel();
 

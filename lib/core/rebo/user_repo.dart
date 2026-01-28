@@ -7,6 +7,7 @@ class UsersRepo {
   Future<void> saveCurrentUser({
     required String name,
     required String email,
+    required String role,
   }) async {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) throw Exception('User not logged in');
@@ -16,6 +17,7 @@ class UsersRepo {
       'uid': user.uid,
       'email': email,
       'name': name,
+      'role': role,
       'updatedAt': FieldValue.serverTimestamp(),
       'createdAt':
           FieldValue.serverTimestamp(), // first time only (merge keeps it)

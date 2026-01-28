@@ -10,7 +10,7 @@ class SignUpButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final RegisterCubit cubit = context.read<RegisterCubit>();
+    final RegisterCubit registerCubit = context.read<RegisterCubit>();
     return BlocBuilder<RegisterCubit, RegisterState>(
       builder: (BuildContext context, state) {
         final isLoading = state is RegisterLoading;
@@ -35,9 +35,18 @@ class SignUpButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                 ),
                 elevation: 0,
-                onPressed: isLoading
-                    ? null
-                    : () => cubit.register(context),
+                onPressed: () {
+                  if (isLoading) return;
+                  print(
+                    "registerCubit.registerModel.dropdownValue ${registerCubit.registerModel.dropdownValue}",
+                  );
+                  if (registerCubit.registerModel.dropdownValue ==
+                      'Buyer') {
+                    registerCubit.register(context);
+                  } else {
+                    registerCubit.sellerRegister(context);
+                  }
+                },
 
                 child: SizedBox(
                   width: double.infinity,

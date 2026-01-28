@@ -10,12 +10,12 @@ class RegisterEmail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final RegisterCubit cubit = context.read<RegisterCubit>();
+    final RegisterCubit registerCubit = context.read<RegisterCubit>();
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12),
 
       child: TextFormField(
-        controller: cubit.registerModel.regEmailController,
+        controller: registerCubit.registerModel.regEmailController,
 
         keyboardType: TextInputType.emailAddress,
 

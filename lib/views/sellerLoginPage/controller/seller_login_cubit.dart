@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 import 'package:train/core/model/seller_login_model.dart';
 import 'package:train/views/sellerLoginPage/controller/seller_login_state.dart';
 import 'package:train/views/sellerPage/view.dart';
@@ -21,6 +20,8 @@ class SellerLoginCubit extends Cubit<SellerLoginState> {
           email: loginModel.emailController.text,
           password: loginModel.passController.text,
         );
+        final user = FirebaseAuth.instance.currentUser;
+
         emit(SellerLoginSuccess());
         loginModel.clearInputs();
         Navigator.pushAndRemoveUntil(
