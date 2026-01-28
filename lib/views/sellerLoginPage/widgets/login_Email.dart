@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:train/views/sellerLoginPage/controller/login_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
 import 'package:train/core/constants/validatesConstants.dart';
+import 'package:train/views/sellerLoginPage/controller/seller_login_cubit.dart';
 
 class LoginEmail extends StatelessWidget {
   const LoginEmail({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final LoginCubit sellerLoginCubit = context.read<LoginCubit>();
+    final SellerLoginCubit sellerLoginCubit = context
+        .read<SellerLoginCubit>();
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12),
       child: TextFormField(

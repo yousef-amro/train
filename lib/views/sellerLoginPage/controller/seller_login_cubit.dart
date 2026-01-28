@@ -1,34 +1,35 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:train/core/model/login_model.dart';
-import 'package:train/views/homePage/view.dart';
-import 'package:train/views/sellerLoginPage/controller/login_state.dart';
+import 'package:meta/meta.dart';
+import 'package:train/core/model/seller_login_model.dart';
+import 'package:train/views/sellerLoginPage/controller/seller_login_state.dart';
+import 'package:train/views/sellerPage/view.dart';
 
-class LoginCubit extends Cubit<LoginState> {
-  LoginCubit() : super(LoginInitial());
+class SellerLoginCubit extends Cubit<SellerLoginState> {
+  SellerLoginCubit() : super(SellerLoginInitial());
 
-  LoginModel loginModel = LoginModel();
+  SellerLoginModel loginModel = SellerLoginModel();
   bool passToggel = true;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   void login(BuildContext context) async {
     if (loginModel.isValid) {
       try {
-        emit(LoginLoading());
+        emit(SellerLoginLoading());
         await _auth.signInWithEmailAndPassword(
           email: loginModel.emailController.text,
           password: loginModel.passController.text,
         );
-        emit(LoginSuccess());
+        emit(SellerLoginSuccess());
         loginModel.clearInputs();
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (_) => const HomePage()),
+          MaterialPageRoute(builder: (_) => const SellerPage()),
           (route) => false, // remove everything
         );
       } catch (e) {
-        emit(LoginError(e.toString()));
+        emit(SellerLoginError(e.toString()));
       }
     }
   }

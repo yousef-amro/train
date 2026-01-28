@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:train/views/sellerLoginPage/controller/login_cubit.dart';
+import 'package:train/views/sellerLoginPage/controller/seller_login_cubit.dart';
 import 'package:train/views/sellerLoginPage/widgets/login_Email.dart';
 import 'package:train/views/sellerLoginPage/widgets/login_Password.dart';
 
@@ -15,7 +15,8 @@ class TextFieldsComponents extends StatefulWidget {
 class _TextFeildsComponentsState extends State<TextFieldsComponents> {
   @override
   Widget build(BuildContext context) {
-    final LoginCubit sellerLoginCubit = context.read<LoginCubit>();
+    final SellerLoginCubit sellerLoginCubit = context
+        .read<SellerLoginCubit>();
 
     return Column(
       children: [

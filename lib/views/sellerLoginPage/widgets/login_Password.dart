@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
-import 'package:train/views/sellerLoginPage/controller/login_cubit.dart';
+import 'package:train/views/sellerLoginPage/controller/seller_login_cubit.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({
@@ -22,7 +22,8 @@ class PasswordField extends StatefulWidget {
 class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
-    final LoginCubit sellerLoginCubit = context.read<LoginCubit>();
+    final SellerLoginCubit sellerLoginCubit = context
+        .read<SellerLoginCubit>();
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12),
       child: TextFormField(

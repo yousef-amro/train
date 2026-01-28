@@ -2,19 +2,20 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
-import 'package:train/views/sellerLoginPage/controller/login_cubit.dart';
-import 'package:train/views/sellerLoginPage/controller/login_state.dart';
+import 'package:train/views/sellerLoginPage/controller/seller_login_cubit.dart';
+import 'package:train/views/sellerLoginPage/controller/seller_login_state.dart';
 
 class signInButton extends StatelessWidget {
   const signInButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final LoginCubit sellerLoginCubit = context.read<LoginCubit>();
+    final SellerLoginCubit sellerLoginCubit = context
+        .read<SellerLoginCubit>();
 
-    return BlocBuilder<LoginCubit, LoginState>(
+    return BlocBuilder<SellerLoginCubit, SellerLoginState>(
       builder: (BuildContext context, state) {
-        final isLoading = state is LoginLoading;
+        final isLoading = state is SellerLoginLoading;
 
         return AbsorbPointer(
           absorbing: isLoading,

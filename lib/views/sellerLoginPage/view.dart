@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:train/views/sellerLoginPage/components/intro_header_component.dart';
 import 'package:train/views/sellerLoginPage/components/new_account_component.dart';
 import 'package:train/views/sellerLoginPage/components/text_fields_component.dart';
-import 'package:train/views/sellerLoginPage/controller/login_cubit.dart';
-import 'package:train/views/sellerLoginPage/controller/login_state.dart';
+import 'package:train/views/sellerLoginPage/controller/seller_login_cubit.dart';
+import 'package:train/views/sellerLoginPage/controller/seller_login_state.dart';
 import 'package:train/views/sellerLoginPage/widgets/signIn_Button.dart';
 import 'package:train/core/constants/appColorsConstants.dart';
 
@@ -16,7 +16,7 @@ class SellerLoginScreen extends StatefulWidget {
 }
 
 class _SellerLoginScreenState extends State<SellerLoginScreen> {
-  LoginCubit sellerLoginCubit = LoginCubit();
+  SellerLoginCubit sellerLoginCubit = SellerLoginCubit();
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -36,11 +36,11 @@ class _SellerLoginScreenState extends State<SellerLoginScreen> {
                   TextFieldsComponents(),
                   const SizedBox(height: 20),
 
-                  BlocListener<LoginCubit, LoginState>(
+                  BlocListener<SellerLoginCubit, SellerLoginState>(
                     listener: (context, state) {
-                      if (state is LoginSuccess) {
+                      if (state is SellerLoginSuccess) {
                         // Navigator.pushReplacement(...)
-                      } else if (state is LoginError) {
+                      } else if (state is SellerLoginError) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text(state.message)),
                         );
