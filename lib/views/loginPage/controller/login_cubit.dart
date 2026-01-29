@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:train/core/datasources/auth.dart';
 import 'package:train/core/model/login_model.dart';
 import 'package:train/views/homePage/view.dart';
 import 'package:train/views/loginPage/controller/login_state.dart';
@@ -20,21 +21,23 @@ class LoginCubit extends Cubit<LoginState> {
           email: loginModel.emailController.text,
           password: loginModel.passController.text,
         );
-        final user = FirebaseAuth.instance.currentUser;
-        print('tu user id is : ${user?.uid}');
-        emit(LoginSuccess());
-        loginModel.clearInputs();
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (_) => const HomePage()),
-          (route) => false,
-        );
 
-        // else {
-        //   ScaffoldMessenger.of(
-        //     context,
-        //   ).showSnackBar(SnackBar(content: Text('No account')));
-        // }
+        final result = await AuthDataSource.isSeller();
+        if (result.role == 'Buyer') {
+          emit(LoginSuccess());
+          loginModel.clearInputs();
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (_) => const HomePage()),
+            (route) => false,
+          );
+        } else {
+          // ScaffoldMessenger.of(
+          //   context,
+          // ).showSnackBar(SnackBar(content: Text('No account')));
+          emit(LoginError('this is a seller account'));
+          FirebaseAuth.instance.signOut();
+        }
       } catch (e) {
         emit(LoginError(e.toString()));
       }

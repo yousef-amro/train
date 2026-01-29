@@ -14,9 +14,10 @@ class NetworkUtils {
 
   static Future<Response<dynamic>> get({
     required String path,
-    required Map<String, dynamic>? headers,
+    required String headers,
   }) async {
-    print("path:$path");
-    return NetworkUtils._dio!.get("$path/$headers");
+    print("path:$path  headers:$headers");
+
+    return _dio!.get("$path/$headers");
   }
 }
