@@ -20,7 +20,6 @@ class SellerLoginCubit extends Cubit<SellerLoginState> {
           email: loginModel.emailController.text,
           password: loginModel.passController.text,
         );
-        final user = FirebaseAuth.instance.currentUser;
 
         emit(SellerLoginSuccess());
         loginModel.clearInputs();

@@ -1,9 +1,4 @@
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:train/core/constants/appColorsConstants.dart';
-import 'package:train/views/registerPage/controller/register_cubit.dart';
 import 'package:train/views/registerPage/widgets/drop_down_menu.dart';
 import 'package:train/views/registerPage/widgets/register_Email.dart';
 import 'package:train/views/registerPage/widgets/register_Name.dart';

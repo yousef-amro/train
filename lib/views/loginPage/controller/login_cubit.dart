@@ -25,8 +25,14 @@ class LoginCubit extends Cubit<LoginState> {
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (_) => const HomePage()),
-          (route) => false, // remove everything
+          (route) => false,
         );
+
+        // else {
+        //   ScaffoldMessenger.of(
+        //     context,
+        //   ).showSnackBar(SnackBar(content: Text('No account')));
+        // }
       } catch (e) {
         emit(LoginError(e.toString()));
       }
