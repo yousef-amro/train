@@ -26,7 +26,7 @@ class GoogleLoginButton extends StatelessWidget {
             alignment: Alignment.centerLeft,
 
             children: [
-              Image.asset(assets.googlelogo, width: 50, height: 50),
+              Image.asset(Assets.googleLogo, width: 50, height: 50),
               Center(
                 child: Text(
                   style: TextStyle(

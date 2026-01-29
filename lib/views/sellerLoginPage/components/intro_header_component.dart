@@ -28,7 +28,7 @@ class _IntroHeaderState extends State<IntroHeaderComponent> {
             ),
           ],
         ),
-        Image.asset(assets.logo2, height: 72, width: 72),
+        Image.asset(Assets.logo2, height: 72, width: 72),
         const SizedBox(height: 15),
         Text(
           'welcome'.tr(),

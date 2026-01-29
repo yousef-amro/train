@@ -20,6 +20,8 @@ class LoginCubit extends Cubit<LoginState> {
           email: loginModel.emailController.text,
           password: loginModel.passController.text,
         );
+        final user = FirebaseAuth.instance.currentUser;
+        print('tu user id is : ${user?.uid}');
         emit(LoginSuccess());
         loginModel.clearInputs();
         Navigator.pushAndRemoveUntil(

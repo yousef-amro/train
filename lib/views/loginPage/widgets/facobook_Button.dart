@@ -26,7 +26,7 @@ class FaceBookLoginButton extends StatelessWidget {
             alignment: Alignment.centerLeft,
 
             children: [
-              Image.asset(assets.facebooklogo, width: 50, height: 50),
+              Image.asset(Assets.facebookLogo, width: 50, height: 50),
               Center(
                 child: Text(
                   style: TextStyle(
