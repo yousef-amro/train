@@ -22,8 +22,8 @@ class LoginCubit extends Cubit<LoginState> {
           password: loginModel.passController.text,
         );
 
-        final result = await AuthDataSource.isSeller();
-        if (result.role == 'Buyer') {
+        final result = await AuthDataSource.getUser();
+        if (result.isSeller) {
           emit(LoginSuccess());
           loginModel.clearInputs();
           Navigator.pushAndRemoveUntil(
@@ -32,9 +32,6 @@ class LoginCubit extends Cubit<LoginState> {
             (route) => false,
           );
         } else {
-          // ScaffoldMessenger.of(
-          //   context,
-          // ).showSnackBar(SnackBar(content: Text('No account')));
           emit(LoginError('this is a seller account'));
           FirebaseAuth.instance.signOut();
         }
