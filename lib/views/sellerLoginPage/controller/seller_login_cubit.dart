@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:train/core/datasources/auth.dart';
 import 'package:train/core/model/seller_login_model.dart';
 import 'package:train/views/sellerLoginPage/controller/seller_login_state.dart';
 import 'package:train/views/sellerPage/view.dart';
@@ -21,13 +22,19 @@ class SellerLoginCubit extends Cubit<SellerLoginState> {
           password: loginModel.passController.text,
         );
 
-        emit(SellerLoginSuccess());
-        loginModel.clearInputs();
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (_) => const SellerPage()),
-          (route) => false, // remove everything
-        );
+        final result = await AuthDataSource.getUser();
+        if (result.isSeller) {
+          emit(SellerLoginSuccess());
+          loginModel.clearInputs();
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (_) => const SellerPage()),
+            (route) => false,
+          );
+        } else {
+          emit(SellerLoginError('Account credential incorrect'));
+          FirebaseAuth.instance.signOut();
+        }
       } catch (e) {
         emit(SellerLoginError(e.toString()));
       }

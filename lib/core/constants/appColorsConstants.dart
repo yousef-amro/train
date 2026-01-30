@@ -5,5 +5,5 @@ class AppColors {
   static Color baliHai = Color(0xFF9098B1);
   static Color gray = Color.fromARGB(255, 205, 211, 228);
   static const Color zircon = Color(0xFFEBF0FF);
-  static Color white = Color(0xffffffff);
+  static Color white = Colors.white;
 }

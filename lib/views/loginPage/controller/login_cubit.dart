@@ -23,7 +23,7 @@ class LoginCubit extends Cubit<LoginState> {
         );
 
         final result = await AuthDataSource.getUser();
-        if (result.isSeller) {
+        if (result.isBuyer) {
           emit(LoginSuccess());
           loginModel.clearInputs();
           Navigator.pushAndRemoveUntil(
@@ -32,7 +32,7 @@ class LoginCubit extends Cubit<LoginState> {
             (route) => false,
           );
         } else {
-          emit(LoginError('this is a seller account'));
+          emit(LoginError('Account credential incorrect'));
           FirebaseAuth.instance.signOut();
         }
       } catch (e) {
